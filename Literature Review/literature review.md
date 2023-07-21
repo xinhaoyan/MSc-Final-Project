@@ -15,3 +15,9 @@ This paper introduces the Transformer network, a new architecture for sequence t
 This paper introduces the original Transformer architecture consisting of encoders and decoders, which will be related later as separate modules. In addition, this paper introduces the concepts of scaled dot product attention mechanisms, multi-head attention blocks, and positional input coding, which remain the foundations of the modern Transformer.
 
 URL of the paper：https://arxiv.org/abs/1706.03762
+
+## The third paper tital  is “BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding”
+
+This paper contains information about BERT, a powerful language representation model that can be fine-tuned for various natural language processing tasks. The paper includes references to other research papers that describe BERT's architecture, pre-training process, and fine-tuning on specific tasks such as sentiment analysis and textual similarity.
+
+URL of the pape： https://arxiv.org/abs/1810.04805
