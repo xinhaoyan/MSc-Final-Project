@@ -18,6 +18,10 @@ st.set_page_config(page_title='Msc Project of Xinhao YANG', page_icon=None, layo
 st.write("Msc Project of Xinhao YANG")
 
 
+user_api_key = st.sidebar.text_input(
+    label="Input your OpenAI API key ",
+    placeholder="Paste your openAI API key",
+    type="password")
 
 uploaded_file = st.sidebar.file_uploader("upload", type="txt")
 
@@ -44,7 +48,7 @@ if uploaded_file:
         embeddings = OpenAIEmbeddings()
         vectors = FAISS.from_documents(data, embeddings)
 
-        chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(temperature=1.0, model_name='gpt-3.5-turbo'),
+        chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(temperature=1.0, model_name='gpt-3.5-turbo', openai_api_key=user_api_key),
                                                         retriever=vectors.as_retriever())
 
         def Chat(query):
