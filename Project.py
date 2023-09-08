@@ -16,7 +16,7 @@ import streamlit_chat
 
 st.set_page_config(page_title='Msc Project of Xinhao YANG', page_icon=None, layout='centered', initial_sidebar_state='auto')
 st.write("Msc Project of Xinhao YANG")
-
+OPENAI_API_KEY  ="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"
 
 user_api_key = st.sidebar.text_input(
     label="Input your OpenAI API key ",
@@ -46,7 +46,7 @@ if uploaded_file:
         data = loader.load()
 
         embeddings = OpenAIEmbeddings()
-        vectors = FAISS.from_documents(data, embeddings)
+        vectors = FAISS.from_documents(data, embeddings,openai_api_key=OPENAI_API_KEY)
 
         chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(temperature=1.0, model_name='gpt-3.5-turbo', openai_api_key=user_api_key),
                                                         retriever=vectors.as_retriever())
