@@ -10,3 +10,4 @@ youtube-transcript-api==0.6.0
 faiss-cpu
 tokenizer
 tokenizers 
+streamlit_chat
