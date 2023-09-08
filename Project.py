@@ -12,6 +12,7 @@ import pandas as pd
 import tiktoken
 import openai
 import csv
+import streamlit_chat
 
 st.set_page_config(page_title='Msc Project of Xinhao YANG', page_icon=None, layout='centered', initial_sidebar_state='auto')
 st.write("Msc Project of Xinhao YANG")
