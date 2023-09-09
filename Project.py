@@ -45,7 +45,7 @@ if uploaded_file:
         loader = CSVLoader(file_path=tmp_file_path, encoding="utf-8")
         data = loader.load()
 
-        embeddings = OpenAIEmbeddings()
+        embeddings = OpenAIEmbeddings(openai_api_key=user_api_key)
         vectors = FAISS.from_documents(data, embeddings)
 
         chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(temperature=1.0, model_name='gpt-3.5-turbo', openai_api_key=user_api_key),
@@ -112,3 +112,10 @@ if uploaded_file:
             st.markdown(href, unsafe_allow_html=True)
 
         st.write("All rows have been processed!")
+# How to run？
+#python -m venv .venv
+#.\.venv\Scripts\activate
+
+#pip install -r requirements.txt
+
+#streamlit run Project.py
