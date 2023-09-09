@@ -24,7 +24,7 @@ user_api_key = st.sidebar.text_input(
     type="password")
 
 uploaded_file = st.sidebar.file_uploader("upload", type="txt")
-
+st.write(uploaded_file)
 MAX_TOKENS = 4096
 #Calculate the number of tokens
 def count_tokens_with_openai(string: str) -> int:
